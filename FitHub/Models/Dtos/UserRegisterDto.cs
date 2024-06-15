@@ -4,10 +4,10 @@ namespace FitHub.Models.Dtos
 {
     public class UserRegisterDto
     {
-        [Required(ErrorMessage = "Name is required")]
-        public string Name { get; set; }
-        [Required(ErrorMessage = "Surname is required")]
-        public string Surname { get; set; }
+        [Required(ErrorMessage = "FirstName is required")]
+        public string FirstName { get; set; }
+        [Required(ErrorMessage = "LastName is required")]
+        public string LastName { get; set; }
         [Required(ErrorMessage = "Phone is required")]
         public int Phone { get; set; }
         [Required(ErrorMessage = "NationalId is required")]

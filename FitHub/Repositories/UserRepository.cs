@@ -2,7 +2,6 @@
 using FitHub.Models;
 using FitHub.Models.Dtos;
 using FitHub.Repositories.IRepositories;
-using Microsoft.AspNetCore.Http.HttpResults;
 using System.Net;
 
 namespace FitHub.Repositories
@@ -19,7 +18,7 @@ namespace FitHub.Repositories
         }
         public User GetUser(int nationalId)
         {
-            return _db.Users.FirstOrDefault(u => u.NationalId == nationalId);
+            return _db.User.FirstOrDefault(u => u.NationalId == nationalId);
         }
 
         public async Task<User> Register(UserRegisterDto userRegisterDto)
@@ -27,8 +26,8 @@ namespace FitHub.Repositories
             
             User user = new User()
             {
-                Name = userRegisterDto.Name,
-                Surname = userRegisterDto.Surname,
+                FirstName = userRegisterDto.FirstName,
+                LastName = userRegisterDto.LastName,
                 Phone = userRegisterDto.Phone,
                 NationalId = userRegisterDto.NationalId,
                 address = userRegisterDto.address,
@@ -38,7 +37,7 @@ namespace FitHub.Repositories
             user.RegistrationDate = DateTime.Now;
             user.ExpirationDate = user.RegistrationDate.AddMonths(1);
 
-            _db.Users.Add(user);
+            _db.User.Add(user);
             await _db.SaveChangesAsync();
 
             return user;
@@ -50,7 +49,7 @@ namespace FitHub.Repositories
             try
             {
 
-            var user = _db.Users.FirstOrDefault(u => u.NationalId == nationalId);
+            var user = _db.User.FirstOrDefault(u => u.NationalId == nationalId);
            
             user.ExpirationDate = user.ExpirationDate > DateTime.Now ? user.ExpirationDate.AddMonths(months) : DateTime.Now.AddMonths(months);
             _db.Update(user);
@@ -77,7 +76,7 @@ namespace FitHub.Repositories
 
         public bool UserExists(int nationalId)
         {
-            return _db.Users.Any(u => u.NationalId == nationalId);
+            return _db.User.Any(u => u.NationalId == nationalId);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using FitHub.Models;
 using FitHub.Models.Dtos;
-using Microsoft.AspNetCore.Mvc;
 
 namespace FitHub.Services.IServices
 {
