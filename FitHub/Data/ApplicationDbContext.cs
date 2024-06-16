@@ -15,7 +15,7 @@ namespace FitHub.Data
             base.OnModelCreating(builder);
         }
 
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Admin> Admin { get; set; }
     }
 }

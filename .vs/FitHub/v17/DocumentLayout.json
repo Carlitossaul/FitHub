@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\projects c# .net\\FitHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|e:\\projects c# .net\\fithub\\fithub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|solutionrelative:fithub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|e:\\projects c# .net\\fithub\\fithub\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|solutionrelative:fithub\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|e:\\projects c# .net\\fithub\\fithub\\repositories\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|solutionrelative:fithub\\repositories\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|e:\\projects c# .net\\fithub\\fithub\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|solutionrelative:fithub\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|e:\\projects c# .net\\fithub\\fithub\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|solutionrelative:fithub\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|e:\\projects c# .net\\fithub\\fithub\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451E4620-1918-40B7-96F7-9A7946E12BD0}|FitHub\\FitHub.csproj|solutionrelative:fithub\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 162,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "E:\\projects c# .net\\FitHub\\FitHub\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "FitHub\\Controllers\\AdminController.cs",
-              "ToolTip": "E:\\projects c# .net\\FitHub\\FitHub\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "FitHub\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAQwGwAAAAJAAAA",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\projects c# .net\\FitHub\\FitHub\\Models\\User.cs",
+              "RelativeDocumentMoniker": "FitHub\\Models\\User.cs",
+              "ToolTip": "E:\\projects c# .net\\FitHub\\FitHub\\Models\\User.cs",
+              "RelativeToolTip": "FitHub\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T00:59:42.336Z",
+              "WhenOpened": "2024-06-16T19:56:38.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\projects c# .net\\FitHub\\FitHub\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "FitHub\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\projects c# .net\\FitHub\\FitHub\\Controllers\\UserController.cs",
+              "RelativeToolTip": "FitHub\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T19:53:22.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\projects c# .net\\FitHub\\FitHub\\Program.cs",
-              "RelativeDocumentMoniker": "FitHub\\Program.cs",
-              "ToolTip": "E:\\projects c# .net\\FitHub\\FitHub\\Program.cs",
-              "RelativeToolTip": "FitHub\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAABAAAA",
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "E:\\projects c# .net\\FitHub\\FitHub\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "FitHub\\Repositories\\UserRepository.cs",
+              "ToolTip": "E:\\projects c# .net\\FitHub\\FitHub\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "FitHub\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwE4AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T23:49:25.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminRepository.cs",
-              "DocumentMoniker": "E:\\projects c# .net\\FitHub\\FitHub\\Repositories\\AdminRepository.cs",
-              "RelativeDocumentMoniker": "FitHub\\Repositories\\AdminRepository.cs",
-              "ToolTip": "E:\\projects c# .net\\FitHub\\FitHub\\Repositories\\AdminRepository.cs",
-              "RelativeToolTip": "FitHub\\Repositories\\AdminRepository.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAwwE4AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T00:32:23.16Z",
+              "WhenOpened": "2024-06-16T19:53:06.619Z",
               "EditorCaption": ""
             }
           ]

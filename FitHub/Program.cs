@@ -3,8 +3,6 @@ using FitHub.FithubMappers;
 using FitHub.Models;
 using FitHub.Repositories;
 using FitHub.Repositories.IRepositories;
-using FitHub.Services;
-using FitHub.Services.IServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,9 +20,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // add auth with .NET Identity
 builder.Services.AddIdentity<Admin, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
-//add services
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IAdminService, AdminService>();
 
 //add repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();

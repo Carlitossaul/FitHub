@@ -41,9 +41,10 @@ namespace FitHub.Repositories
             return _mapper.Map<ICollection<AdminDataDto>>(_db.Admin.ToList());
         }
 
-        public Admin GetAdmin(string adminId)
+        public AdminDataDto GetAdmin(string adminId)
         {
-            return _db.Admin.FirstOrDefault(u => u.Id == adminId);
+            return _mapper.Map<AdminDataDto>(_db.Admin.FirstOrDefault(u => u.Id == adminId));
+            //return _db.Admin.FirstOrDefault(u => u.Id == adminId);
         }
 
         public async Task<AdminLoginResponseDto> Login(AdminLoginDto adminLoginDto)

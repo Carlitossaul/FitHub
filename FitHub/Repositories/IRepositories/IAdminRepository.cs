@@ -8,7 +8,7 @@ namespace FitHub.Repositories.IRepositories
         public Task<AdminDataDto> Register(AdminRegisterDto adminRegisterDto);  
         public Task<AdminLoginResponseDto> Login(AdminLoginDto adminLoginDto);
         public bool AdminExists(string username);
-        public Admin GetAdmin(string adminId);
+        public AdminDataDto GetAdmin(string adminId);
         public ICollection<AdminDataDto> GetAdmins(); 
         public bool DeleteAdmin(string adminId);
     }

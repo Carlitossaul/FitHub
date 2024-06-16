@@ -13,7 +13,7 @@ namespace FitHub.Models.Dtos
         [Required(ErrorMessage = "NationalId is required")]
         public int NationalId { get; set; }
         [Required(ErrorMessage = "Address is required")]
-        public string address { get; set; }
+        public string Address { get; set; }
         [Required(ErrorMessage = "Photo is required")]
         public string Photo { get; set; }
         public DateTime RegistrationDate { get; set; }

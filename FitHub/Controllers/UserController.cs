@@ -1,5 +1,5 @@
 ﻿using FitHub.Models.Dtos;
-using FitHub.Services.IServices;
+using FitHub.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitHub.Controllers
@@ -8,17 +8,17 @@ namespace FitHub.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly IUserRepository _userRepository;
+        public UserController(IUserRepository userRepository)
         {
-            _userService = userService;
+            _userRepository = userRepository;
         }
 
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto)
         {
-            bool isNationalIdExist = _userService.UserExists(userRegisterDto.NationalId);
+            bool isNationalIdExist = _userRepository.UserExists(userRegisterDto.NationalId);
             if (isNationalIdExist)
             {
                 return BadRequest("National Id already exists");
@@ -29,7 +29,7 @@ namespace FitHub.Controllers
                 return BadRequest(ModelState);
             }
 
-            var result = await _userService.Register(userRegisterDto);
+            var result = await _userRepository.Register(userRegisterDto);
 
             if (result == null)
             {
@@ -50,7 +50,7 @@ namespace FitHub.Controllers
                 return BadRequest();
             }
 
-            var user = _userService.GetUser(nationalId);
+            var user = _userRepository.GetUser(nationalId);
             if (user == null)
             {
                 return NotFound();
@@ -67,13 +67,13 @@ namespace FitHub.Controllers
                 return BadRequest();
             }
 
-            var user = _userService.GetUser(nationalId);
+            var user = _userRepository.GetUser(nationalId);
             if (user == null)
             {
                 return NotFound();
             }
 
-            var result = _userService.UpdateMonths(nationalId, months);
+            var result = _userRepository.UpdateMonths(nationalId, months);
            
             return Ok(result);
         }

@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FitHub.Models.Dtos;
-using FitHub.Services.IServices;
-using Microsoft.AspNetCore.Http;
+using FitHub.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -11,12 +10,12 @@ namespace FitHub.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-        private readonly IAdminService _adminService;
+        private readonly IAdminRepository _adminRepository;
         protected ResponseAPI _response;
         private readonly IMapper _mapper;
-        public AdminController(IAdminService adminService, IMapper mapper)
+        public AdminController(IAdminRepository adminRepository, IMapper mapper)
         {
-            _adminService = adminService;
+            _adminRepository = adminRepository;
             _response = new ResponseAPI();
             _mapper = mapper;
         }
@@ -28,14 +27,14 @@ namespace FitHub.Controllers
             {
                 return BadRequest();
             }
-            bool admin = _adminService.AdminExists(adminRegisterDto.UserName);
+            bool admin = _adminRepository.AdminExists(adminRegisterDto.UserName);
             if (admin)
             {
                 _response.Message = "Username already exists!";
                 _response.IsSuccess = false;
                 return BadRequest(_response);
             }
-            var result = await _adminService.Register(adminRegisterDto);
+            var result = await _adminRepository.Register(adminRegisterDto);
             if (result == null)
             {
                 _response.Message = "Registration failed!";
@@ -53,7 +52,7 @@ namespace FitHub.Controllers
         [HttpGet("users")]
         public IActionResult GetUsers()
         {
-            var admins = _adminService.GetAdmins();
+            var admins = _adminRepository.GetAdmins();
 
             if (!admins.Any())
             {
@@ -66,7 +65,7 @@ namespace FitHub.Controllers
         [HttpDelete("{adminId}")]
         public IActionResult DeleteAdmin(string adminId)
         {
-            if (!_adminService.DeleteAdmin(adminId))
+            if (!_adminRepository.DeleteAdmin(adminId))
             {
                 return NotFound();
             }
@@ -77,7 +76,7 @@ namespace FitHub.Controllers
         [HttpGet("{adminId}")]
         public IActionResult GetAdmin(string adminId)
         {
-            var admin = _adminService.GetAdmin(adminId);
+            var admin = _adminRepository.GetAdmin(adminId);
 
             if (admin == null)
             {
@@ -94,17 +93,18 @@ namespace FitHub.Controllers
             {
                 return BadRequest();
             }
-            var result = await _adminService.Login(adminLoginDto);
-            if (result == null)
+            var responseLogin = await _adminRepository.Login(adminLoginDto);
+            if (responseLogin.Admin == null || string.IsNullOrEmpty(responseLogin.Token))
             {
                 _response.Message = "Login failed!";
                 _response.IsSuccess = false;
+                _response.StatusCode = HttpStatusCode.BadRequest;
                 return BadRequest(_response);
             }
             _response.Message = "Login successful!";
             _response.IsSuccess = true;
             _response.StatusCode = HttpStatusCode.OK;
-            _response.Result = result;
+            _response.Result = responseLogin;
             return Ok(_response);
         }
     
